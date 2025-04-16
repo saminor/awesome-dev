@@ -1,5 +1,3 @@
-Here’s the same content translated into English and aligned to the left:
-
 ---
 
 ### **Introduction**
