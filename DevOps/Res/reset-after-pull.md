@@ -28,11 +28,11 @@ python manage.py migrate
 - After restarting, check the status:
 ```bash
 sudo systemctl status gunicorn
-    ```
+```
 
 #### 2. For the Frontend (Next.js with PM2):
-- **Why might you need to restart?** PM2 manages the Next.js process, but if you have new code (like changes to components or pages), you need to rebuild the project and restart PM2 to load the changes.
-- **Recommended commands:**
+    - **Why might you need to restart?** PM2 manages the Next.js process, but if you have new code (like changes to components or pages), you need to rebuild the project and restart PM2 to load the changes.
+    - **Recommended commands:**
 ```bash
 cd /path/to/your/nextjs/project  # Navigate to the Next.js project directory
 git pull origin main  # Pull the changes
