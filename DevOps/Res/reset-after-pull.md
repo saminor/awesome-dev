@@ -12,35 +12,35 @@ Now, regarding your main question: **Yes, after pulling changes, you might need 
 #### 1. For the Backend (Django with Gunicorn):
    - **Why might you need to restart?** Gunicorn keeps Django code in memory, so if you pulled new code (like changes to models, views, or settings), you need to restart Gunicorn to apply the changes.
    - **Recommended commands:**
-     ```
+     ```bash
      cd /path/to/your/django/project  # Navigate to the Django project directory (e.g., RoyaClinic)
      git pull origin main  # Assuming the main branch; this pulls the changes
      ```
      Then, restart Gunicorn:
-     ```
+     ```bash
      sudo systemctl restart gunicorn
      ```
      - If the changes include database migrations (like adding a new field), definitely run these commands:
-       ```
+       ```bash
        python manage.py makemigrations
        python manage.py migrate
        ```
      - After restarting, check the status:
-       ```
+       ```bash
        sudo systemctl status gunicorn
        ```
 
 #### 2. For the Frontend (Next.js with PM2):
    - **Why might you need to restart?** PM2 manages the Next.js process, but if you have new code (like changes to components or pages), you need to rebuild the project and restart PM2 to load the changes.
    - **Recommended commands:**
-     ```
+     ```bash
      cd /path/to/your/nextjs/project  # Navigate to the Next.js project directory
      git pull origin main  # Pull the changes
      npm run build  # Rebuild the project (this step is important for production)
      pm2 restart nextjs-app  # Replace nextjs-app with the name you previously set
      ```
      - After restarting, check the status:
-       ```
+       ```bash
        pm2 status
        ```
 
