@@ -1,3 +1,5 @@
+# How to Config Postgers On Django
+
 a detailed step-by-step guide for configuring PostgreSQL with Django on Linux.
 This guide includes the commands to install PostgreSQL, create a database, set up a user with full access, and configure Django to connect to PostgreSQL.
 
